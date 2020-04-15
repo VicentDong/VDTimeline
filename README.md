@@ -2,47 +2,49 @@
 
 时间线组件,基于 js、 Lodash 的时间线控件，支持：
 
-- （1）滑动加载
-- （2）播放，快进，快退，回到第一项，回到最后项，前一项，后一项
-- （3）自动播放
+- 滑动加载
+- 播放，快进，快退，回到第一项，回到最后项，前一项，后一项
+- 自动播放
+
+![运行截图](https://github.com/VicentDong/VDTimeline/blob/master/screenhot.png?raw=true)
 
 ## 使用环境
 
-VDTimeline 支持浏览器和 Nodejs 中引入<br >
-浏览器支持：IE8+，Chrome，Firefox，Safari 等<br >
+- VDTimeline 支持浏览器和 Nodejs 中引入
+- 浏览器支持：IE8+，Chrome，Firefox，Safari 等
 
 ## 安装
 
-VDTimeline 支持多种形式的引入，包括 script，ES6，AMD，commonJS 方式的引入。<br >
+- VDTimeline 支持多种形式的引入，包括 script，ES6，AMD，commonJS 方式的引入。
 
-使用 SCRIPT 标签引入 VDTimeline 时，会创建全局的变量 VDTimeline 进行调用。<script src="VDTimeline.js"></script><br >
+- 使用 SCRIPT 标签引入 VDTimeline 时，会创建全局的变量 VDTimeline 进行调用。<script src="VDTimeline.js"></script>
 
-使用 require(‘VDTimeline’)方式引入<br >
+- 使用 require(‘VDTimeline’)方式引入
 
-ES2015 模块 如 import VDTimeline from ‘VDTimeline’<br >
+- ES2015 模块 如 import VDTimeline from ‘VDTimeline’
 
 ## 使用
 
-根据具体应用场景，参考上章节的 script 引入方式进行 VDTimeline 的安装。<br >
-为了减少包的体积，VDTimeline 抽离了部分公用 JS，如 Lodash。基于此，需要在使用时手动引入支持 lodash,可以自行采用 CDN 加速<br >
+- 根据具体应用场景，参考上章节的 script 引入方式进行 VDTimeline 的安装。
+- 为了减少包的体积，VDTimeline 抽离了部分公用 JS，如 Lodash。基于此，需要在使用时手动引入支持 lodash,可以自行采用 CDN 加速
 
 ## 发布目录结构
 
 VDTimeline<br >
--- fonts<br >
--- index.html<br >
--- main.css<br >
--- VDTimeline.js<br >
--- VDTimeline.js.map<br >
+fonts<br >
+index.html<br >
+main.css<br >
+VDTimeline.js<br >
+VDTimeline.js.map<br >
 
-（1）fonts 文件夹<br >
-内含 VDTimeline 使用的字体资源，使用时需要添加到项目<br >
-（2）Index.html<br >
-这个 Html 是作为 VDTimeline 的演示/实例的 html 入口，项目引入可以删<br >
-（3）main.css<br >
-Css 文件是 VDTimeline 加载时需要调用的样式文件，项目需要引入<br >
-（4）VDTimeline.js<br >
-Js 文件，是 VDTimeline 的主要 Js 文件，项目需要引入<br >
+- fonts 文件夹
+  内含 VDTimeline 使用的字体资源，使用时需要添加到项目
+- Index.html
+  这个 Html 是作为 VDTimeline 的演示/实例的 html 入口，项目引入可以删
+- main.css
+  Css 文件是 VDTimeline 加载时需要调用的样式文件，项目需要引入
+- VDTimeline.js
+  Js 文件，是 VDTimeline 的主要 Js 文件，项目需要引入
 
 ## 示例
 
