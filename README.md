@@ -31,11 +31,17 @@
 ## 发布目录结构
 
 VDTimeline<br >
-fonts<br >
-index.html<br >
-main.css<br >
-VDTimeline.js<br >
-VDTimeline.js.map<br >
+
+├─dist
+| ├─index.html
+| ├─main.css
+| ├─VDTimeline.js
+| ├─VDTimeline.js.map
+| ├─fonts
+| | ├─iconfont.eot
+| | ├─iconfont.svg
+| | ├─iconfont.ttf
+| | └iconfont.woff
 
 - fonts 文件夹
   内含 VDTimeline 使用的字体资源，使用时需要添加到项目
@@ -86,48 +92,47 @@ myVDTimeLine.stop();<br >
 
 ## 配置
 
-//  容器
-
+- //  容器
 - container: null,
-  //  数据
+- //  数据
 - data: [],
-  //  播放间隔
+- //  播放间隔
 - interval: 2000,
-  //  类目个数
+- //  类目个数
 - size: 10,
-  //  快进/快退速度
+- //  快进/快退速度
 - speed: 5,
-  //  是否显示播放按钮
+- //  是否显示播放按钮
 - showPlayBtn: true,
-  //  是否显示回到第一项按钮
+- //  是否显示回到第一项按钮
 - showStartBtn: true,
-  //  是否显示回到最后一项按钮
+- //  是否显示回到最后一项按钮
 - showEndBtn: true,
-  //  是否显示快退按钮
+- //  是否显示快退按钮
 - showBackBtn: true,
-  //  是否显示快进按钮
+- //  是否显示快进按钮
 - showForwardBtn: true,
-  //  是否显示前一项按钮
+- //  是否显示前一项按钮
 - showNextBtn: true,
-  //  是否显示后一项按钮
+- //  是否显示后一项按钮
 - showPrevBtn: true,
-  //  播放
+- //  播放
 - play: null,
-  //  暂停
+- //  暂停
 - stop: null,
-  //  第一项
+- //  第一项
 - toStart: null,
-  //  最后一项
+- //  最后一项
 - toEnd: null,
-  //  快退
+- //  快退
 - toBack: null,
-  //  快进
+- //  快进
 - toForward: null,
-  //  下一项
+- //  下一项
 - toNext: null,
-  //  前一项
+- //  前一项
 - toPrev: null,
-  // 自动播放
+- // 自动播放
 - autoPlay: false
 
 ## 方法
