@@ -30,9 +30,7 @@
 
 ## 发布目录结构
 
-VDTimeline<br >
-
-├─dist
+├─VDTimeline
 | ├─index.html
 | ├─main.css
 | ├─VDTimeline.js
