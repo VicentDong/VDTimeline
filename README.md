@@ -1,18 +1,16 @@
 # VDTimeline
 
-===
-时间线组件
+时间线组件,基于 js、 Lodash 的时间线控件，支持：
+（1）滑动加载
+（2）播放，快进，快退，回到第一项，回到最后项，前一项，后一项
+（3）自动播放
 
 ## 使用环境
-
----
 
 VDTimeline 支持浏览器和 Nodejs 中引入<br >
 浏览器支持：IE8+，Chrome，Firefox，Safari 等<br >
 
 ## 安装
-
----
 
 VDTimeline 支持多种形式的引入，包括 script，ES6，AMD，commonJS 方式的引入。<br >
 
@@ -30,11 +28,11 @@ ES2015 模块 如 import VDTimeline from ‘VDTimeline’<br >
 ## 发布目录结构
 
 VDTimeline<br >
---fonts<br >
-----index.html<br >
-----main.css<br >
-----VDTimeline.js<br >
-----VDTimeline.js.map<br >
+-- fonts<br >
+-- index.html<br >
+-- main.css<br >
+-- VDTimeline.js<br >
+-- VDTimeline.js.map<br >
 
 （1）fonts 文件夹<br >
 内含 VDTimeline 使用的字体资源，使用时需要添加到项目<br >
