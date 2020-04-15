@@ -30,12 +30,12 @@
 
 ## 发布目录结构
 
-VDTimeline<br >
-fonts<br >
-index.html<br >
-main.css<br >
-VDTimeline.js<br >
-VDTimeline.js.map<br >
+VDTimeline
+>>fonts
+>>index.html
+>>main.css
+>>VDTimeline.js
+>>VDTimeline.js.map
 
 - fonts 文件夹
   内含 VDTimeline 使用的字体资源，使用时需要添加到项目
