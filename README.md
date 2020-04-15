@@ -30,16 +30,16 @@
 
 ## 发布目录结构
 
-├─VDTimeline<br/>
-| ├─index.html<br/>
-| ├─main.css<br/>
-| ├─VDTimeline.js<br/>
-| ├─VDTimeline.js.map<br/>
-| ├─fonts<br/>
-| | ├─iconfont.eot<br/>
-| | ├─iconfont.svg<br/>
-| | ├─iconfont.ttf<br/>
-| | └iconfont.woff<br/>
+├─VDTimeline  
+| ├─index.html  
+| ├─main.css  
+| ├─VDTimeline.js  
+| ├─VDTimeline.js.map  
+| ├─fonts  
+| | ├─iconfont.eot  
+| | ├─iconfont.svg  
+| | ├─iconfont.ttf  
+| | └iconfont.woff
 
 - fonts 文件夹
   内含 VDTimeline 使用的字体资源，使用时需要添加到项目
