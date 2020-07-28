@@ -1,6 +1,6 @@
-import './font/iconfont.css';
-import './style/timeline.less';
-import TimeLine from './timeline';
+import "./font/iconfont.css";
+import "./style/timeline.less";
+import TimeLine from "./timeline";
 
 var myTimeLine = new TimeLine();
 

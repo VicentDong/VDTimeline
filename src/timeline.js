@@ -1,41 +1,59 @@
-import _ from 'lodash';
+import _ from "lodash";
 
 //  创建类目节点html
 function createItems() {
-  var timeItemEle = document.createElement('div');
-  timeItemEle.classList = 'timeItems';
+  var timeItemEle = document.createElement("div");
+  timeItemEle.classList = "timeItems";
   this.controller.append(timeItemEle);
 }
 function generateItems() {
-  var timeItemEle = this.controller.querySelector('.timeItems');
+  var timeItemEle = this.controller.querySelector(".timeItems");
   var data = this.items;
   var index = this.index;
+  var self = this;
   for (var i in data) {
-    var itemEle = document.createElement('div');
-    itemEle.classList = 'item';
+    var itemEle = document.createElement("div");
+    itemEle.classList = "item";
 
-    var radio = document.createElement('div');
-    radio.classList = i == index ? 'radio on' : 'radio';
+    var radio = document.createElement("div");
+    radio.classList = i == index ? "radio on" : "radio";
     itemEle.append(radio);
-    var trail = document.createElement('div');
-    trail.classList = i == index ? 'trail on' : 'trail';
+    var trail = document.createElement("div");
+    trail.classList = i == index ? "trail on" : "trail";
     itemEle.append(trail);
 
-    var content = document.createElement('div');
-    content.classList = 'content';
+    var content = document.createElement("div");
+    content.classList = "content";
     content.innerHTML = data[i].name;
     itemEle.append(content);
 
     timeItemEle.append(itemEle);
   }
+  timeItemEle.addEventListener("click", (e) => {
+    let item = e.target.parentElement;
+    let lists = Array.from(timeItemEle.querySelectorAll(".item"));
+    let currIndex = lists.indexOf(item);
+    if (currIndex > -1) {
+      self.index = currIndex;
+      move.call(self);
+      if (typeof self.options.checkedCallback == "function") {
+        self.options.checkedCallback(
+          self.items[self.index],
+          self.items[0],
+          self.items[self.items.length - 1]
+        );
+      }
+    }
+    return false;
+  });
 }
 
 // 创建播放按钮
 function createPlayBtn() {
   var self = this;
-  var playBtn = document.createElement('div');
-  playBtn.classList = 'control play iconfont icon-bofang';
-  playBtn.addEventListener('click', () => {
+  var playBtn = document.createElement("div");
+  playBtn.classList = "control play iconfont icon-bofang";
+  playBtn.addEventListener("click", () => {
     self.play(self.options.play);
   });
   this.controller.append(playBtn);
@@ -44,9 +62,9 @@ function createPlayBtn() {
 // 创建最前按钮
 function createToStartBtn() {
   var self = this;
-  var toStartBtn = document.createElement('div');
-  toStartBtn.classList = 'control iconfont icon-zuizuo toStart';
-  toStartBtn.addEventListener('click', () => {
+  var toStartBtn = document.createElement("div");
+  toStartBtn.classList = "control iconfont icon-zuizuo toStart";
+  toStartBtn.addEventListener("click", () => {
     self.toStart(self.options.toStart);
   });
   this.controller.append(toStartBtn);
@@ -54,9 +72,9 @@ function createToStartBtn() {
 // 创建最后按钮
 function createToEndBtn() {
   var self = this;
-  var toEnd = document.createElement('div');
-  toEnd.classList = 'control iconfont icon-zuiyou toEnd';
-  toEnd.addEventListener('click', () => {
+  var toEnd = document.createElement("div");
+  toEnd.classList = "control iconfont icon-zuiyou toEnd";
+  toEnd.addEventListener("click", () => {
     self.toEnd(self.options.toEnd);
   });
   this.controller.append(toEnd);
@@ -65,9 +83,9 @@ function createToEndBtn() {
 // 创建快退按钮
 function createToBackBtn() {
   var self = this;
-  var toBackBtn = document.createElement('div');
-  toBackBtn.classList = 'control iconfont icon-kuaitui toBack';
-  toBackBtn.addEventListener('click', () => {
+  var toBackBtn = document.createElement("div");
+  toBackBtn.classList = "control iconfont icon-kuaitui toBack";
+  toBackBtn.addEventListener("click", () => {
     self.toBack(self.options.toBack);
   });
   this.controller.append(toBackBtn);
@@ -76,9 +94,9 @@ function createToBackBtn() {
 // 创建快进按钮
 function createToForwardBtn() {
   var self = this;
-  var toForward = document.createElement('div');
-  toForward.classList = 'control iconfont icon-kuaijin toForward';
-  toForward.addEventListener('click', () => {
+  var toForward = document.createElement("div");
+  toForward.classList = "control iconfont icon-kuaijin toForward";
+  toForward.addEventListener("click", () => {
     self.toForward(self.options.toForward);
   });
   this.controller.append(toForward);
@@ -87,9 +105,9 @@ function createToForwardBtn() {
 // 创建前一项按钮
 function createToPrevBtn() {
   var self = this;
-  var toPrevBtn = document.createElement('div');
-  toPrevBtn.classList = 'control iconfont icon-zuo toPrev';
-  toPrevBtn.addEventListener('click', () => {
+  var toPrevBtn = document.createElement("div");
+  toPrevBtn.classList = "control iconfont icon-zuo toPrev";
+  toPrevBtn.addEventListener("click", () => {
     self.prev(self.options.toPrev);
   });
   this.controller.append(toPrevBtn);
@@ -98,9 +116,9 @@ function createToPrevBtn() {
 // 创建后一项按钮
 function createToNextBtn() {
   var self = this;
-  var toNextBtn = document.createElement('div');
-  toNextBtn.classList = 'control iconfont icon-tubiaozhizuo- toNext';
-  toNextBtn.addEventListener('click', () => {
+  var toNextBtn = document.createElement("div");
+  toNextBtn.classList = "control iconfont icon-tubiaozhizuo- toNext";
+  toNextBtn.addEventListener("click", () => {
     self.next(self.options.toNext);
   });
   this.controller.append(toNextBtn);
@@ -111,8 +129,8 @@ function createControls() {
   var container = this.options.container;
 
   // 创建timeline容器
-  var timelineEle = document.createElement('div');
-  timelineEle.classList = 'timeline';
+  var timelineEle = document.createElement("div");
+  timelineEle.classList = "timeline";
   this.controller = timelineEle;
   // 添加到用户元素
   container.append(timelineEle);
@@ -156,10 +174,10 @@ function move() {
   this.items = this.options.data.slice(this.start, this.end);
 
   var itemsEle = this.controller
-    ? this.controller.querySelector('.timeItems')
+    ? this.controller.querySelector(".timeItems")
     : null;
   if (itemsEle) {
-    itemsEle.innerHTML = '';
+    itemsEle.innerHTML = "";
   }
   generateItems.call(this);
 }
@@ -218,6 +236,8 @@ class TimeLine {
       toPrev: null,
       //自动播放
       autoPlay: false,
+      //点击回调
+      checkedCallback: null,
     };
   }
   get playState() {
@@ -225,13 +245,13 @@ class TimeLine {
   }
   set playState(value) {
     if (this.controller) {
-      var playBtn = this.controller.querySelector('.play');
+      var playBtn = this.controller.querySelector(".play");
       if (value) {
-        playBtn.classList.remove('icon-bofang');
-        playBtn.classList.add('icon-zanting');
+        playBtn.classList.remove("icon-bofang");
+        playBtn.classList.add("icon-zanting");
       } else {
-        playBtn.classList.remove('icon-zanting');
-        playBtn.classList.add('icon-bofang');
+        playBtn.classList.remove("icon-zanting");
+        playBtn.classList.add("icon-bofang");
       }
     }
     this._playState = value;
@@ -247,7 +267,7 @@ class TimeLine {
     }
     if (this.options.data.length <= 0) {
       var container = this.options.container;
-      container.innerHTML = '请初始化控件数据';
+      container.innerHTML = "请初始化控件数据";
       return null;
     }
 
@@ -375,6 +395,17 @@ class TimeLine {
     move.call(this);
     if (_.isFunction(callback)) {
       callback(this.items[this.index], this.index, this.start, this.end);
+    }
+  }
+  setCurrIndex(index, callback) {
+    this.index = index;
+    move.call(this);
+    if (typeof callback == "function") {
+      callback(
+        this.items[this.index],
+        this.items[0],
+        this.items[this.items.length - 1]
+      );
     }
   }
 }
